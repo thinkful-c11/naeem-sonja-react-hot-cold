@@ -10,9 +10,10 @@ export default function GuessForm(props) {
             <input type="text" name="userGuess" id="userGuess"
                 className="text" maxLength="3" autoComplete="off"
                 placeholder="Enter your Guess" required 
-               onChange={event => props.onChange(event)}/>
+               onChange={ e => console.log(e.target.value)}} />  
             <input type="submit" id="guessButton" className="button" name="submit" value="Guess"/>
         </form>
     );
 };
 
+/*onChange={event => props.onChange(event)*/

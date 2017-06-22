@@ -9,8 +9,9 @@ export default function GuessSection(props) {
         <section> 
             
             <h2 id="feedback">{props.feedback}</h2>
-            <GuessForm  onChange={event => console.log(event.target.value)}/>
+            <GuessForm  onChange={props.onChange}/>
         </section>
     );
 }
 
+//  onChange={event => console.log(event.target.value)}
