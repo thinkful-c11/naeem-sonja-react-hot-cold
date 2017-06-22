@@ -15,15 +15,21 @@ export default class Game extends React.Component {
         }
     }
 
+
     addGuesses(asd){
 
-        console.log("IM THE REAL NUMBER", this.state.answer);
-        console.log('IM IN GAME', asd);
+        //console.log("IM THE REAL NUMBER", this.state.answer);
+        //console.log('IM IN GAME', asd);
 
         const guesses = [... this.state.guesses, asd];
 
-        console.log("hey there, its me", guesses);
+        //console.log("hey there, its me", guesses);
         this.setState({guesses});
+    }
+
+    resetState(){
+        //console.log("this is where the state should reset");
+        this.setState({guesses:[], answer: Math.floor(Math.random() * 100)});
     }
 
 
@@ -52,9 +58,7 @@ export default class Game extends React.Component {
 
         return (
             <div>
-                <Header />
-                {/* All input comes from the GuessSection will need to update rest based on this info*/}
-                {/*onChange={event=>onChange(event)}*/}
+                <Header resetState={state => this.resetState(state)}/>
                 <GuessSection addGuesses={guess => this.addGuesses(guess)} feedback={feedback} />
                 <GuessCount count={this.state.guesses.length} />
                 <GuessList guesses={this.state.guesses} />
