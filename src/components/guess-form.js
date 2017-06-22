@@ -2,6 +2,7 @@ import React from 'react';
 
 import './guess-form.css';
 
+
 export default class GuessForm extends React.Component {
     constructor(props){
         super(props);
@@ -24,6 +25,6 @@ export default class GuessForm extends React.Component {
             </form>
         );
     }
+
 };
 
-/*onChange={event => props.onChange(event)*/
