@@ -18,12 +18,14 @@ export default class GuessForm extends React.Component {
                 <input type="text" name="userGuess" id="userGuess"
                     className="text" maxLength="3" autoComplete="off"
                     placeholder="Enter your Guess" required 
-                    value={this.state.guess}
-                onChange={ e => this.setState({guess: e.target.value})}  />  
-                <input type="submit" id="guessButton" className="button" name="submit" value="Guess" onClick={ () => this.props.addGuesses(this.state.guess)} />
+                    value={this.state.guess} 
+                    onChange={ e => this.setState({guess: e.target.value})}/>  
+                <input type="submit" id="guessButton" className="button" name="submit" value="Guess" 
+                onClick={ () => this.props.addGuesses(this.state.guess)} />
             </form>
         );
     }
 
 };
 
+// 
