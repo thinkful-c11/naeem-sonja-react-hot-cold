@@ -5,15 +5,13 @@ import './guess-form.css';
 export default function GuessForm(props) {
     return (
      
-        <form>
-            
+        <form>   
             <input type="text" name="userGuess" id="userGuess"
                 className="text" maxLength="3" autoComplete="off"
                 placeholder="Enter your Guess" required 
-               onChange={ e => console.log(e.target.value)}} />  
+                onChange={event => props.onChange(event)}/>
             <input type="submit" id="guessButton" className="button" name="submit" value="Guess"/>
         </form>
     );
 };
 
-/*onChange={event => props.onChange(event)*/
