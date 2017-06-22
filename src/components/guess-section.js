@@ -7,9 +7,9 @@ import './guess-section.css';
 export default function GuessSection(props) {
     return (               
         <section> 
-            {/*onChange={event => props.onChange(event)}*/}
+            
             <h2 id="feedback">{props.feedback}</h2>
-            <GuessForm  />
+            <GuessForm  onChange={event => console.log(event.target.value)}/>
         </section>
     );
 }
