@@ -9,7 +9,7 @@ export default function GuessSection(props) {
         <section> 
             
             <h2 id="feedback">{props.feedback}</h2>
-            <GuessForm  onChange={props.onChange}/>
+            <GuessForm addGuesses={props.onChange} onChange={props.onChange} onClick={props.onClick}/>
         </section>
     );
 }
