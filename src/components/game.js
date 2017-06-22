@@ -11,24 +11,30 @@ export default class Game extends React.Component {
         super(props);
         this.state = {
             feedback: 'Make your guess!',
-            count:3,
             guesses:[]
         }
     }
-addGuesses(asd){
-    const guesses = [...this.state.guesses, asd];
-    
-    this.setState({guesses})
+    addGuesses(asd){
 
-}
+        console.log('IM IN GAME', asd);
+
+        //console.log(this);
+        const guesses = [... this.state.guesses, asd];
+
+        //[this.state.guesses, asd];
+        console.log("hey there, its me", guesses);
+        this.setState({guesses});
+    
+
+    }
     render(){
         return (
             <div>
                 <Header />
                 {/* All input comes from the GuessSection will need to update rest based on this info*/}
                 {/*onChange={event=>onChange(event)}*/}
-                <GuessSection addGuesses={this.addGuesses} feedback={this.state.feedback} />
-                <GuessCount count={this.state.count} />
+                <GuessSection addGuesses={guess => this.addGuesses(guess)} feedback={this.state.feedback} />
+                <GuessCount count={this.state.guesses.length} />
                 <GuessList guesses={this.state.guesses} />
             </div>
         );
